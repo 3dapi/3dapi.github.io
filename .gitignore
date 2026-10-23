@@ -42,6 +42,7 @@ UpgradeLog.htm
 *.suo
 *.VC.db
 *.opensdf
+*.php
 
 ########################################
 # android studio
