@@ -3,37 +3,485 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3dapi</title>
+
+    <title>3dapi - Game Programming</title>
+
+    <link rel="icon" href="base/img/favicon.ico">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                "Segoe UI",
+                "Noto Sans KR",
+                Arial,
+                sans-serif;
+            color: #222;
+            background: #f5f6f8;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #0969da;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ------------------------------------------------------------
+           Header
+        ------------------------------------------------------------ */
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #d8dee4;
+        }
+
+        .header-inner {
+            width: min(1100px, calc(100% - 40px));
+            margin: 0 auto;
+            min-height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo img {
+            display: block;
+            max-height: 48px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        nav a {
+            color: #333;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #0969da;
+            text-decoration: none;
+        }
+
+        /* ------------------------------------------------------------
+           Hero
+        ------------------------------------------------------------ */
+
+        .hero {
+            background: #ffffff;
+            text-align: center;
+            padding: 55px 20px 45px;
+            border-bottom: 1px solid #d8dee4;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hero h1 {
+            margin: 25px 0 8px;
+            font-size: 2rem;
+        }
+
+        .hero p {
+            margin: 0;
+            color: #57606a;
+            font-size: 1.05rem;
+        }
+
+        /* ------------------------------------------------------------
+           Main
+        ------------------------------------------------------------ */
+
+        main {
+            width: min(1100px, calc(100% - 40px));
+            margin: 45px auto 70px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+
+            font-size: 1.45rem;
+            border-bottom: 2px solid #d0d7de;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(270px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            padding: 22px;
+
+            background: #ffffff;
+            border: 1px solid #d8dee4;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            font-size: 1.15rem;
+        }
+
+        .card p {
+            margin: 0 0 14px;
+            color: #57606a;
+        }
+
+        .card-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 7px 13px;
+
+            color: #24292f;
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .button:hover {
+            background: #eef1f4;
+            text-decoration: none;
+        }
+
+        .archive-list {
+            padding-left: 22px;
+        }
+
+        .archive-list li {
+            margin-bottom: 10px;
+        }
+
+        /* ------------------------------------------------------------
+           Footer
+        ------------------------------------------------------------ */
+
+        footer {
+            padding: 28px 20px;
+
+            color: #57606a;
+            background: #ffffff;
+            border-top: 1px solid #d8dee4;
+
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* ------------------------------------------------------------
+           Mobile
+        ------------------------------------------------------------ */
+
+        @media (max-width: 700px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px 0;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                padding: 35px 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            main {
+                margin-top: 30px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>3dapi</h1>
+<header>
+    <div class="header-inner">
 
-<p>게임 프로그래밍 및 강의 자료를 정리하는 페이지입니다.</p>
-
-<h2>Unreal Engine</h2>
-
-<ul>
-    <li>
-        <a href="https://github.com/3dapi/Ue2DGame">
-            Unreal Engine 2D Game
+        <a class="logo" href="./">
+            <img
+                src="base/img/3dapi_n.png"
+                alt="3dapi">
         </a>
-    </li>
-    <li>
-        <a href="https://github.com/3dapi/Ue2DGame/blob/main/unreal_2d.pdf">
-            언리얼 2D Game 교재 PDF
+
+        <nav>
+            <a href="#unreal">Unreal Engine</a>
+            <a href="#programming">Programming</a>
+            <a href="#archive">Archive</a>
+            <a
+                href="https://github.com/3dapi"
+                target="_blank"
+                rel="noopener noreferrer">
+                GitHub
+            </a>
+        </nav>
+
+    </div>
+</header>
+
+
+<section class="hero">
+
+    <img
+        src="base/img/_main_title6.png"
+        alt="3dapi Game Programming">
+
+    <h1>Game Programming & Lecture Materials</h1>
+
+    <p>
+        게임 프로그래밍 강의 자료와 프로젝트를 정리합니다.
+    </p>
+
+</section>
+
+
+<main>
+
+    <!-- ---------------------------------------------------------
+         Unreal Engine
+    ---------------------------------------------------------- -->
+
+    <section id="unreal">
+
+        <h2>Unreal Engine</h2>
+
+        <div class="grid">
+
+            <article class="card">
+
+                <h3>Unreal Engine 2D Game</h3>
+
+                <p>
+                    Blueprint와 Paper2D를 활용한
+                    언리얼 엔진 2D 게임 제작 프로젝트입니다.
+                </p>
+
+                <div class="card-links">
+
+                    <a
+                        class="button"
+                        href="https://github.com/3dapi/Ue2DGame"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        GitHub Repository
+                    </a>
+
+                    <a
+                        class="button"
+                        href="https://github.com/3dapi/Ue2DGame/blob/main/unreal_2d.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        교재 PDF
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>Unreal Engine 3D Blueprint</h3>
+
+                <p>
+                    Unreal Engine Blueprint를 활용한
+                    3D 게임 제작 프로젝트입니다.
+                </p>
+
+                <div class="card-links">
+
+                    <a
+                        class="button"
+                        href="https://github.com/3dapi/Ue3DProj"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        GitHub Repository
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ---------------------------------------------------------
+         Programming
+    ---------------------------------------------------------- -->
+
+    <section id="programming">
+
+        <h2>Programming</h2>
+
+        <div class="grid">
+
+            <article class="card">
+
+                <h3>C Programming</h3>
+
+                <p>
+                    C 프로그래밍 강의 및 실습 자료입니다.
+                </p>
+
+                <a
+                    class="button"
+                    href="https://github.com/3dapi/bs01_c"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    GitHub Repository
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>C++ Programming</h3>
+
+                <p>
+                    C++ 프로그래밍 강의 및 실습 자료입니다.
+                </p>
+
+                <a
+                    class="button"
+                    href="https://github.com/3dapi/bs02_cpp"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    GitHub Repository
+                </a>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>2D Game Library</h3>
+
+                <p>
+                    게임 프로그래밍 학습을 위한
+                    2D 게임 라이브러리입니다.
+                </p>
+
+                <a
+                    class="button"
+                    href="https://github.com/3dapi/glc2d_lib"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    GitHub Repository
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ---------------------------------------------------------
+         Archive
+    ---------------------------------------------------------- -->
+
+    <section id="archive">
+
+        <h2>Archive</h2>
+
+        <ul class="archive-list">
+
+            <li>
+                <a
+                    href="https://github.com/GALICSOFT/glc220"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    glc220 - Windows / Android Cross Platform Game Library
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://github.com/3dapi/bs11_2d_basic"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    2D Game Library for Beginner
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://github.com/3dapi"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    3dapi GitHub
+                </a>
+            </li>
+
+        </ul>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        Copyright © 2004–2026 3dapi.com
+    </p>
+
+    <p>
+        <a
+            href="https://creativecommons.org/licenses/by-nc-sa/2.0/kr/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Creative Commons BY-NC-SA 2.0 KR
         </a>
-    </li>
-</ul>
+    </p>
 
-<h2>Programming</h2>
-
-<ul>
-    <li>C / C++</li>
-    <li>C#</li>
-    <li>Database</li>
-    <li>Game Server Programming</li>
-</ul>
+</footer>
 
 </body>
 </html>
